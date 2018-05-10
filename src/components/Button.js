@@ -1,12 +1,12 @@
 import React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
 
-const Button = () => {
+const Button = ({ whenPressed, children }) => {
     const { buttonStyle, textStyle } = styles;
     return (
-        <TouchableOpacity style={buttonStyle}>
+        <TouchableOpacity onPress={whenPressed} style={buttonStyle}>
             <Text style={textStyle}>
-                Click me!!
+                {children}
             </Text>
         </TouchableOpacity>
     );
@@ -27,6 +27,7 @@ const styles = {
         backgroundColor: '#fff',
         borderWidth: 1,
         borderColor: '#007aff',
+        borderRadius: 4,
         marginLeft: 5,
         marginRight: 5
     }
